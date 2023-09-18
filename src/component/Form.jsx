@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./form.css";
 
-function Form() {
+function Form({ updateCardInfo }) {
   let [values, setvalues] = useState({
     CHN: "",
     CNO: "",
@@ -50,6 +50,7 @@ function Form() {
     Seterror(newEroor);
     return Object.values(newEroor).some((errors) => errors);
   };
+
   const isValidName = (name) => {
     return /^[A-Za-z\s]+$/.test(name) && name.length >= 2;
   };
@@ -76,10 +77,17 @@ function Form() {
   //handle form
 
   const Handleform = (e) => {
-    validForm();
     e.preventDefault();
-    console.log(values);
-    console.log(error)
+    const hasErrors = validForm();
+    if (!hasErrors) {
+      updateCardInfo({
+        cardholderName: values.CHN,
+        cardNumber: values.CNO,
+        cardMonth: values.mm,
+        cardYear: values.yy,
+        cvv: values.cvc,
+      });
+    }
   };
   return (
     <form className="formbox" onSubmit={Handleform}>
