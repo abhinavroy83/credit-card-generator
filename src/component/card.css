@@ -1,36 +1,107 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  gap: 10px;
+}
+.circle {
+  /* border: 2px solid red; */
+  width: 310px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.circle1 {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #feffff;
+  border-radius: 50%;
+}
+.circle2 {
+  margin: 5px;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #feffff;
+  border-radius: 50%;
 }
 .Cardfront {
   margin: 10px;
   width: 447px;
   height: 246px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   border-radius: 10px;
   background-image: url("assests/cardfront.png");
   background-repeat: none;
 }
+.cardname {
+  color: #fff;
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4.68px;
+}
+.cardname p {
+  margin: 0px;
+  padding: 0px;
+}
+.holdername_mmyy {
+  display: flex;
+  justify-content: space-between;
+}
+.holdername_mmyy {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.47px;
+}
+.mm_yy {
+  display: flex;
+}
 
 .CardBack {
+  display: flex;
+  flex-direction: column;
+
   border-radius: 10px;
-  margin: 10px;
+  margin: 20px 20px 20px 80px;
   width: 447px;
   height: 246px;
-  border: 2px solid red;
   background: linear-gradient(107deg, #fff 0%, #d9d9d9 103.94%);
   filter: drop-shadow(10px 11px 62px rgba(0, 0, 0, 0.19));
 }
-.cvvv {
-  /* width: 448px; */
+.black {
+  margin-top: 15px;
   height: 52px;
   background-color: #000;
+}
+
+.cvv_adjust {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 .cvv_number {
   width: 361px;
   height: 38px;
   border-radius: 4px;
-  /* border: 1px solid #000; */
   background: #adb6bf;
   text-align: end;
+}
+.cvv_number p {
+  padding-right: 5px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 3.29px;
 }

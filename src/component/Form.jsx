@@ -87,30 +87,35 @@ function Form({ updateCardInfo }) {
         cardYear: values.yy,
         cvv: values.cvc,
       });
+      
     }
   };
   return (
     <form className="formbox" onSubmit={Handleform}>
-      <label>CARDHOLDER NAME</label>
+      <div className="cardholder_name_section">
+        <label>CARDHOLDER NAME</label>
 
-      <input
-        type="text"
-        name="CHN"
-        placeholder="e.g. Jane Appleseed"
-        value={values.CHN}
-        onChange={handle}
-      />
+        <input
+          type="text"
+          name="CHN"
+          placeholder="e.g. Jane Appleseed"
+          value={values.CHN}
+          onChange={handle}
+        />
 
-      {error.CHN ? <label id="warning">Cardholder name required</label> : ""}
-      <label>CARD NUMBER</label>
-      <input
-        type="text"
-        name="CNO"
-        placeholder="e.g. 1234 5678 9123 0000"
-        value={values.CNO}
-        onChange={handle}
-      />
-      {error.CNO ? <label id="warning">Cardholder number required</label> : ""}
+        {error.CHN ? <label id="warning">Cardholder name required</label> : ""}
+      </div>
+      <div className="card_number_section">
+        <label>CARD NUMBER</label>
+        <input
+          type="text"
+          name="CNO"
+          placeholder="e.g. 1234 5678 9123 0000"
+          value={values.CNO}
+          onChange={handle}
+        />
+        {error.CNO ? <label id="warning">Card number required</label> : ""}
+      </div>
       <div className="Date_cvv">
         <div>
           <label>EXP.DATE (MM/YY)</label>
@@ -123,7 +128,7 @@ function Form({ updateCardInfo }) {
                 value={values.mm}
                 onChange={handle}
               />
-              {error.mm ? <label id="warning">invalid month</label> : ""}
+              {error.mm ? <label id="warning">invalid</label> : ""}
             </div>
             <div>
               <input
@@ -133,7 +138,7 @@ function Form({ updateCardInfo }) {
                 value={values.yy}
                 onChange={handle}
               />
-              {error.yy ? <label id="warning">invalid year</label> : ""}
+              {error.yy ? <label id="warning">invalid</label> : ""}
             </div>
           </div>
         </div>
@@ -146,7 +151,7 @@ function Form({ updateCardInfo }) {
             value={values.cvc}
             onChange={handle}
           />
-          {error.cvc ? <label id="warning">invalid CVC</label> : ""}
+          {error.cvc ? <label id="warning">CVC must be numeric</label> : ""}
         </div>
       </div>
       <button>Confirm</button>

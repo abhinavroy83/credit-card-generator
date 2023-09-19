@@ -1,15 +1,21 @@
 import "./card.css";
 
-function Card({ cardholderName, cardNumber, cardMonth, cardYear ,cvv}) {
+function Card({ cardholderName, cardNumber, cardMonth, cardYear, cvv }) {
   return (
     <div className="card">
       {/* front card  */}
       <div className="Cardfront">
+        <div className="circle">
+          <div className="circle1"></div>
+          <div className="circle2"></div>
+        </div>
         <div>
-          <p>{cardNumber}</p>
-          <div>
+          <div className="cardname">
+            <p>{cardNumber}</p>
+          </div>
+          <div className="holdername_mmyy">
             <p>{cardholderName}</p>
-            <div>
+            <div className="mm_yy">
               <p>{cardMonth}</p>
               <p>/</p>
               <p>{cardYear}</p>
@@ -20,9 +26,11 @@ function Card({ cardholderName, cardNumber, cardMonth, cardYear ,cvv}) {
 
       {/* back card */}
       <div className="CardBack">
-        <div className="cvvv"></div>
-        <div className="cvv_number">
-          <p>{cvv}</p>
+        <div className="black"></div>
+        <div className="cvv_adjust">
+          <div className="cvv_number">
+            <p>{cvv}</p>
+          </div>
         </div>
       </div>
     </div>

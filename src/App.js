@@ -5,8 +5,8 @@ import { useState } from "react";
 
 function App() {
   const [cardinfo, setcardinfo] = useState({
-    cardNumber: "0000 0000 0000 000",
-    cardholderName: "Abhinav",
+    cardNumber: "0000 0000 0000 0000",
+    cardholderName: "JANE APPLESEED",
     cardMonth: '00',
     cardYear:'00',
     cvv:'000'
